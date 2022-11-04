@@ -17,8 +17,8 @@ func init() {
 	log.Printf("Fiber cold start")
 	app := fiber.New()
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World 👋!")
+	app.Get("/healthcheck", func(c *fiber.Ctx) error {
+		return c.SendString("Hello, from my Go Fiber API Lambda 👋!")
 	})
 
 	app.Post("/create-workspace-body", func(c *fiber.Ctx) error {
